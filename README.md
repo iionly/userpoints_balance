@@ -1,18 +1,21 @@
-Userpoints balance plugin for Elgg 1.9
-Latest Version: 1.9.0
-Released: 2013-11-10
-Contact: iionly@gmx.de
-License: GNU General Public License version 2
+Userpoints balance plugin for Elgg 1.9 - 1.11
+=============================================
+
+Latest Version: 1.9.1  
+Released: 2015-06-13  
+Contact: iionly@gmx.de  
+License: GNU General Public License version 2  
 Copyright: (c) iionly 2013
 
 
-Requirements:
+Requirements
+------------
 
 This plugin requires the Elggx Userpoints plugin to be installed and enabled.
 
 
-
-What this plugin does:
+What this plugin does
+---------------------
 
 A user can select (via a dropdown menu selection) how many hours he worked on something and he will then be rewarded with a certain number of userpoints per hour of work.
 
@@ -20,19 +23,8 @@ It's a rather skeletal plugin (e.g. userpoints per hour defined as constant inst
 
 
 
-Installation:
+Installation
+------------
 
 1. Copy the userpoints_balance plugin folder into you mod folder,
 2. Enable the Userpoints balance plugin in the admin section of your site.
-
-
-Changelog:
-
-1.9.0:
-
-- Updated for Elgg 1.9.
-
-
-1.8.0:
-
-- Initial release.

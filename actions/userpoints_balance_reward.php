@@ -18,19 +18,18 @@ $username = elgg_get_logged_in_user_entity()->name;
 
 if(function_exists('userpoints_add')) {
 
-    // Add userpoints
-    $userpoints_balance = $hours_worked * USERPOINTS_PER_HOUR;
-    if($description == '') {
-        $description = elgg_echo('userpoints_balance:no_description', array($username));
-    }
-    $success = userpoints_add($user_guid, $userpoints_balance, 'Userpoint Balance: '.$description);
+	// Add userpoints
+	$userpoints_balance = $hours_worked * USERPOINTS_PER_HOUR;
+	if($description == '') {
+		$description = elgg_echo('userpoints_balance:no_description', array($username));
+	}
+	$success = userpoints_add($user_guid, $userpoints_balance, 'Userpoint Balance: '.$description);
 
-    if($success) {
-        system_message(elgg_echo('userpoints_balance:pointsuccess', array($userpoints_balance, $hours_worked)));
-    } else {
-        register_error(elgg_echo('userpoints_balance:pointfail'));
-    }
-
+	if ($success) {
+		system_message(elgg_echo('userpoints_balance:pointsuccess', array($userpoints_balance, $hours_worked)));
+	} else {
+		register_error(elgg_echo('userpoints_balance:pointfail'));
+	}
 }
 
 forward(REFERER);

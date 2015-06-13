@@ -25,18 +25,20 @@ elgg_register_event_handler('init', 'system', 'userpoints_balance_init');
  */
 function userpoints_balance_init() {
 
-    // Show in Menu
-    if (elgg_is_logged_in()) {
-        elgg_register_menu_item('site', array('name' => elgg_echo('userpoints_balance:menu'),
-                                              'text' => elgg_echo('userpoints_balance:menu'),
-                                              'href' => elgg_get_site_url() . 'userpoints_balance/userpoints_balance'));
-    }
+	// Show in Menu
+	if (elgg_is_logged_in()) {
+		elgg_register_menu_item('site', array(
+			'name' => elgg_echo('userpoints_balance:menu'),
+			'text' => elgg_echo('userpoints_balance:menu'),
+			'href' => elgg_get_site_url() . 'userpoints_balance/userpoints_balance'
+		));
+	}
 
-    // routing of urls
-    elgg_register_page_handler('userpoints_balance', 'userpoints_balance_page_handler');
+	// routing of urls
+	elgg_register_page_handler('userpoints_balance', 'userpoints_balance_page_handler');
 
-    // register the action
-    elgg_register_action('userpoints_balance/userpoints_balance_reward', elgg_get_plugins_path() . 'userpoints_balance/actions/userpoints_balance_reward.php', 'logged_in');
+	// register the action
+	elgg_register_action('userpoints_balance/userpoints_balance_reward', elgg_get_plugins_path() . 'userpoints_balance/actions/userpoints_balance_reward.php', 'logged_in');
 }
 
 /**
@@ -44,26 +46,28 @@ function userpoints_balance_init() {
  */
 function userpoints_balance_page_handler($page) {
 
-    if (!isset($page[0])) {
-        $page[0] = 'userpoints_balance';
-    }
+	if (!isset($page[0])) {
+		$page[0] = 'userpoints_balance';
+	}
 
-    $page_type = $page[0];
-    switch ($page_type) {
-        case 'userpoints_balance':
-            $area2 = elgg_view_title(elgg_echo('userpoints_balance:title'));
-            // Add the form to this section
-            $area2 .= elgg_view('userpoints_balance/userpoints_balance');
-            break;
-        default:
-            return false;
-    }
+	$page_type = $page[0];
+	switch ($page_type) {
+		case 'userpoints_balance':
+			// Add the form to this section
+			$area2 = elgg_view('userpoints_balance/userpoints_balance');
+			break;
+		default:
+			return false;
+	}
 
-    // Format page
-    $body = elgg_view('page/layouts/one_sidebar', array('content' => $area2));
+	// Format page
+	$body = elgg_view('page/layouts/one_sidebar', array(
+		'content' => $area2,
+		'title' => elgg_echo('userpoints_balance:title'
+	)));
 
-    // Draw it
-    echo elgg_view_page(elgg_echo('userpoints_balance:title'), $body);
+	// Draw it
+	echo elgg_view_page(elgg_echo('userpoints_balance:title'), $body);
 
-    return true;
+	return true;
 }
