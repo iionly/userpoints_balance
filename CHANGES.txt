@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.9.2
+-----
+
+- Verified that it works on Elgg 1.9 - 1.12 and Elgg 2.0 (therefore should also work on any future Elgg 2.X versions),
+- composer.json added.
+
 1.9.1
 -----
 
