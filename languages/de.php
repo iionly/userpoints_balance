@@ -7,7 +7,7 @@
  * @copyright iionly
  */
 
-return array(
+return [
 	'userpoints_balance:menu' => 'Aktivitätspunkte-Gutschrift',
 	'userpoints_balance:title' => 'Aktivitätspunkte-Gutschrift',
 
@@ -19,5 +19,5 @@ return array(
 	'userpoints_balance:no_description' => '%s hat keinen Begleittext eingegeben.',
 
 	'userpoints_balance:pointfail' => "Bei der Verwendung der Userpoints-API trat ein Fehler auf!",
-	'userpoints_balance:pointsuccess' => "Dir wurden %s Aktivitätspunkte für %s Stunden Arbeit an Revisionen gutgeschrieben."
-);
+	'userpoints_balance:pointsuccess' => "Dir wurden %s Aktivitätspunkte für %s Stunden Arbeit an Revisionen gutgeschrieben.",
+];

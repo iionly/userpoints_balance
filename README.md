@@ -1,8 +1,8 @@
-Userpoints balance plugin for Elgg 1.9 - 1.12 and Elgg 2.X
-==========================================================
+Userpoints balance plugin for Elgg 2.3 and newer Elgg 2.X
+=========================================================
 
-Latest Version: 1.9.2  
-Released: 2015-10-04  
+Latest Version: 2.3.3  
+Released: 2018-06-02  
 Contact: iionly@gmx.de  
 License: GNU General Public License version 2  
 Copyright: (c) iionly 2013

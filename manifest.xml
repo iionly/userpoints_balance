@@ -3,7 +3,7 @@
 	<name>Userpoints Balance</name>
 	<id>userpoints_balance</id>
 	<author>iionly</author>
-	<version>1.9.2</version>
+	<version>2.3.3</version>
 	<category>enhancement</category>
 	<description>Gain userpoints for hours worked - a skeletal plugin that might need to get customized according to your needs.</description>
 	<website>http://www.elgg.org/</website>
@@ -11,11 +11,11 @@
 	<license>GNU Public License version 2</license>
 	<requires>
 		<type>elgg_release</type>
-		<version>1.9</version>
+		<version>2.3.0</version>
 	</requires>
 	<requires>
 		<type>plugin</type>
 		<name>elggx_userpoints</name>
-		<version>1.9.6</version>
+		<version>2.3.2</version>
 	</requires>
 </plugin_manifest>

@@ -8,28 +8,22 @@
  */
 
 // get the form input
-$params = get_input('params');
-$hours_worked = $params['hours_worked'];
+$params = (array) get_input('params');
+$hours_worked = (int)  $params['hours_worked'];
 $description = $params['description'];
 
 //get GUID and name of user who has entered the hours of revisions
 $user_guid = elgg_get_logged_in_user_guid();
 $username = elgg_get_logged_in_user_entity()->name;
 
-if(function_exists('userpoints_add')) {
-
-	// Add userpoints
-	$userpoints_balance = $hours_worked * USERPOINTS_PER_HOUR;
-	if($description == '') {
-		$description = elgg_echo('userpoints_balance:no_description', array($username));
-	}
-	$success = userpoints_add($user_guid, $userpoints_balance, 'Userpoint Balance: '.$description);
-
-	if ($success) {
-		system_message(elgg_echo('userpoints_balance:pointsuccess', array($userpoints_balance, $hours_worked)));
-	} else {
-		register_error(elgg_echo('userpoints_balance:pointfail'));
-	}
+// Add userpoints
+$userpoints_balance = $hours_worked * USERPOINTS_PER_HOUR;
+if ($description == '') {
+	$description = elgg_echo('userpoints_balance:no_description', [$username]);
 }
 
-forward(REFERER);
+if(!elggx_userpoints_add($user_guid, $userpoints_balance, 'Userpoint Balance: ' . $description)) {
+	return elgg_error_response(elgg_echo('userpoints_balance:pointfail'));
+}
+
+return elgg_ok_response('', elgg_echo('userpoints_balance:pointsuccess', [$userpoints_balance, $hours_worked]), REFERER);

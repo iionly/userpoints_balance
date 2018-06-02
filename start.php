@@ -27,18 +27,18 @@ function userpoints_balance_init() {
 
 	// Show in Menu
 	if (elgg_is_logged_in()) {
-		elgg_register_menu_item('site', array(
+		elgg_register_menu_item('site', [
 			'name' => elgg_echo('userpoints_balance:menu'),
 			'text' => elgg_echo('userpoints_balance:menu'),
-			'href' => elgg_get_site_url() . 'userpoints_balance/userpoints_balance'
-		));
+			'href' => elgg_get_site_url() . 'userpoints_balance/userpoints_balance',
+		]);
 	}
 
 	// routing of urls
 	elgg_register_page_handler('userpoints_balance', 'userpoints_balance_page_handler');
 
 	// register the action
-	elgg_register_action('userpoints_balance/userpoints_balance_reward', elgg_get_plugins_path() . 'userpoints_balance/actions/userpoints_balance_reward.php', 'logged_in');
+	elgg_register_action('userpoints_balance/userpoints_balance_reward', dirname(__FILE__) . '/actions/userpoints_balance_reward.php', 'logged_in');
 }
 
 /**
@@ -50,24 +50,13 @@ function userpoints_balance_page_handler($page) {
 		$page[0] = 'userpoints_balance';
 	}
 
-	$page_type = $page[0];
-	switch ($page_type) {
+	switch ($page[0]) {
 		case 'userpoints_balance':
-			// Add the form to this section
-			$area2 = elgg_view('userpoints_balance/userpoints_balance');
+			echo elgg_view_resource('userpoints_balance/userpoints_balance');
 			break;
 		default:
 			return false;
 	}
-
-	// Format page
-	$body = elgg_view('page/layouts/one_sidebar', array(
-		'content' => $area2,
-		'title' => elgg_echo('userpoints_balance:title'
-	)));
-
-	// Draw it
-	echo elgg_view_page(elgg_echo('userpoints_balance:title'), $body);
 
 	return true;
 }

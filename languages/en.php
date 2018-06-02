@@ -7,7 +7,7 @@
  * @copyright iionly
  */
 
-return array(
+return [
 	'userpoints_balance:menu' => 'Userpoint balance',
 	'userpoints_balance:title' => 'Userpoint balance',
 
@@ -19,5 +19,5 @@ return array(
 	'userpoints_balance:no_description' => '%s hasn\'t added an accompanying text.',
 
 	'userpoints_balance:pointfail' => "An error occured within the userpoints api!",
-	'userpoints_balance:pointsuccess' => "You have been rewarded with %s userpoints for %s hours of revisions."
-);
+	'userpoints_balance:pointsuccess' => "You have been rewarded with %s userpoints for %s hours of revisions.",
+];
