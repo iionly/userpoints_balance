@@ -17,7 +17,7 @@ $content = "<div class='mbm'>" . elgg_echo("userpoints_balance:overview", array(
 $content .= elgg_view_form('userpoints_balance/userpoints_balance_reward');
 
 $body = elgg_view_layout('content', [
-	'filter_override' => '',
+	'filter' => '',
 	'content' => $content,
 	'title' => $title,
 ]);
