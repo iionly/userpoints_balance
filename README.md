@@ -1,8 +1,8 @@
-Userpoints balance plugin for Elgg 3.0 and newer Elgg 3.X
+Userpoints balance plugin for Elgg 4.0 and newer Elgg 4.X
 =========================================================
 
-Latest Version: 3.0.0  
-Released: 2021-02-08  
+Latest Version: 4.0.0  
+Released: 2022-05-16  
 Contact: iionly@gmx.de  
 License: GNU General Public License version 2  
 Copyright: (c) iionly 2013

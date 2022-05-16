@@ -7,7 +7,20 @@
 define("USERPOINTS_PER_HOUR", 10);
 
 return [
-	'bootstrap' => \UserpointsBalanceBootstrap::class,
+	'plugin' => [
+		'name' => 'Userpoints Balance',
+		'version' => '4.0.0',
+		'dependencies' => [
+			'elggx_userpoints' => [],
+		],
+	],
+	'hooks' => [
+		'register' => [
+			'menu:site' => [
+				'UserpointsBalanceMenus::UserpointsBalanceSitemenu' => [],
+			],
+		],
+	],
 	'actions' => [
 		'userpoints_balance/userpoints_balance_reward' => ['access' => 'logged_in'],
 	],
